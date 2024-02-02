@@ -1,10 +1,12 @@
 import { FlatList, Text, View } from "react-native";
 import styles from "./styles";
 import GoalItem from "./GoalItem";
+import CustomButton from "./UI/CustomButton";
 
-const GoalList = ({ goals, onGoalItemDelete }) => {
+const GoalList = ({ goals, onGoalItemDelete, onShowGoalInputModal }) => {
   return (
     <View style={styles.goalsContainer}>
+      <CustomButton text="Add Goal" onPress={onShowGoalInputModal} />
       <Text style={styles.header}>Goals</Text>
       {goals.length === 0 ? (
         <Text>No goals yet</Text>

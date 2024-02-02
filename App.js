@@ -6,6 +6,7 @@ import GoalList from "./components/GoalList";
 
 export default function App() {
   const [goals, setGoals] = useState([]);
+  const [modalIsVisible, setModalIsVisible] = useState(false);
 
   const handleAddGoalButtonPress = (goal) => {
     if (goal) {
@@ -13,6 +14,7 @@ export default function App() {
         ...prevGoals,
         { text: goal, id: Math.random().toString() },
       ]);
+      setModalIsVisible(false);
     }
   };
 
@@ -20,10 +22,26 @@ export default function App() {
     setGoals((prevGoals) => prevGoals.filter((goal) => goal.id !== goalId));
   };
 
+  const handleShowGoalInputModal = () => {
+    setModalIsVisible(true);
+  };
+
+  const handleCancelAddGoal = () => {
+    setModalIsVisible(false);
+  };
+
   return (
     <View style={styles.appContainer}>
-      <GoalInput onAddGoalButtonPress={handleAddGoalButtonPress} />
-      <GoalList goals={goals} onGoalItemDelete={handleGoalItemDelete} />
+      <GoalInput
+        onAddGoalButtonPress={handleAddGoalButtonPress}
+        modalIsVisible={modalIsVisible}
+        onCancelAddGoal={handleCancelAddGoal}
+      />
+      <GoalList
+        goals={goals}
+        onGoalItemDelete={handleGoalItemDelete}
+        onShowGoalInputModal={handleShowGoalInputModal}
+      />
     </View>
   );
 }

@@ -7,18 +7,31 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     marginTop: 50,
   },
-  inputContainer: {
+  addGoalContainer: {
+    padding: 10,
     flex: 1,
-    borderBottomWidth: 2,
-    borderBottomColor: "black",
-    flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "center",
   },
+  inputContainer: {
+    marginBottom: 10,
+    width: "100%",
+    alignItems: "center",
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    width: "70%",
+  },
+  buttons: {
+    width: "40%",
+    marginHorizontal: 5,
+  },
   goalInput: {
+    width: "100%",
     borderColor: "black",
     borderWidth: 1,
-    width: "70%",
+
     paddingLeft: 10,
     marginRight: 10,
   },
