@@ -6,7 +6,11 @@ import CustomButton from "./UI/CustomButton";
 const GoalList = ({ goals, onGoalItemDelete, onShowGoalInputModal }) => {
   return (
     <View style={styles.goalsContainer}>
-      <CustomButton text="Add Goal" onPress={onShowGoalInputModal} />
+      <CustomButton
+        text="Add Goal"
+        onPress={onShowGoalInputModal}
+        color="#5e2bff"
+      />
       <Text style={styles.header}>Goals</Text>
       {goals.length === 0 ? (
         <Text>No goals yet</Text>

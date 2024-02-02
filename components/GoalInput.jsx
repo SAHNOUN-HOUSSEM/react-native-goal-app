@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Modal, TextInput, View } from "react-native";
+import { Image, Modal, TextInput, View } from "react-native";
 import styles from "./styles";
 import CustomButton from "./UI/CustomButton";
 
@@ -22,6 +22,10 @@ const GoalInput = ({
   return (
     <Modal visible={modalIsVisible} animationType="slide">
       <View style={styles.addGoalContainer}>
+        <Image
+          source={require("../assets/images/goal.png")}
+          style={styles.goalImage}
+        />
         <View style={styles.inputContainer}>
           <TextInput
             placeholder="Enter your goal"
@@ -35,11 +39,13 @@ const GoalInput = ({
             onPress={handleAddGoalButtonPress}
             style={styles.buttons}
             text="Add Goal"
+            color="#fdc500"
           />
           <CustomButton
             onPress={onCancelAddGoal}
             style={styles.buttons}
             text="Cancel"
+            color="#d1105a"
           />
         </View>
       </View>

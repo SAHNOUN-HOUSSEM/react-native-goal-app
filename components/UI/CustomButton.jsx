@@ -1,9 +1,9 @@
 import { Button, View } from "react-native";
 
-const CustomButton = ({ text, style, onPress }) => {
+const CustomButton = ({ text, style, onPress, color }) => {
   return (
     <View style={style}>
-      <Button title={text} onPress={onPress} />
+      <Button title={text} onPress={onPress} color={color} />
     </View>
   );
 };
