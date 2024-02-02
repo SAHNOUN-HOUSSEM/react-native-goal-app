@@ -3,6 +3,7 @@ import { View } from "react-native";
 import styles from "./components/styles";
 import GoalInput from "./components/GoalInput";
 import GoalList from "./components/GoalList";
+import { StatusBar } from "expo-status-bar";
 
 export default function App() {
   const [goals, setGoals] = useState([]);
@@ -31,17 +32,20 @@ export default function App() {
   };
 
   return (
-    <View style={styles.appContainer}>
-      <GoalInput
-        onAddGoalButtonPress={handleAddGoalButtonPress}
-        modalIsVisible={modalIsVisible}
-        onCancelAddGoal={handleCancelAddGoal}
-      />
-      <GoalList
-        goals={goals}
-        onGoalItemDelete={handleGoalItemDelete}
-        onShowGoalInputModal={handleShowGoalInputModal}
-      />
-    </View>
+    <>
+      <StatusBar style="light" />
+      <View style={styles.appContainer}>
+        <GoalInput
+          onAddGoalButtonPress={handleAddGoalButtonPress}
+          modalIsVisible={modalIsVisible}
+          onCancelAddGoal={handleCancelAddGoal}
+        />
+        <GoalList
+          goals={goals}
+          onGoalItemDelete={handleGoalItemDelete}
+          onShowGoalInputModal={handleShowGoalInputModal}
+        />
+      </View>
+    </>
   );
 }

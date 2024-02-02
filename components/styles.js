@@ -4,7 +4,6 @@ const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
     backgroundColor: "#592e83",
-    padding: 20,
   },
   addGoalContainer: {
     backgroundColor: "#7b2cbf",
@@ -43,7 +42,11 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     marginRight: 10,
   },
-  goalsContainer: { flex: 5, marginTop: 20 },
+  goalsContainer: {
+    flex: 5,
+    marginTop: 40,
+    paddingHorizontal: 10,
+  },
   header: {
     fontSize: 40,
     fontWeight: "bold",
